@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> /*inline css*/
+        img{
+            max-width:350px;
+            max-height: 100px;
+        }
+        nav{
+            display: flex; /* 4 */
+            justify-content: space-between; /* 5 */
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #05984f; /* 1 */
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+    
+        .links a{
+            margin: 0 10px;
+        }
+
+        button{
+            background-color: #4CAF50;
+            color: white;
+           /* margin-left: 20px;*/
+            margin-top: 20px;  /* 3 */
+            padding: 5px; /* 6 */
+            border-radius: 5px; /* 7 */
+            border-radius: 20px; /* 8 it is over write the previos one */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- semantic HTML https://www.w3schools.com/html/html5_semantic_elements.asp -->
+         <nav> <!-- parent -->
+            <a href=""><h1>Fun Animals</h1></a>   <!-- child - header element -->
+            <div class="links">
+              <a href="index.html">Home</a>
+              <a href="animals.html">Animals</a>
+              <a href="contact.html">Contact</a>
+            </div>    <!-- div & a are siblings. -->
+        </nav>
+    </header>
+    <section>
+
+    </section>
+    <section>
+        <h1>Animals</h1>
+        <img src="https://www.cbc.ca/kids/images/wild_and_wonderful_asian_animals_header_1140.jpg" alt="pic"><br>
+        <p>animals are so fun</p>
+        <button>Click <a href="www.google.com">here to know more</a></button>
+        <hr>
+        <img src="https://www.zoodemagnetichillzoo.ca/sites/default/files/styles/647x490/public/2022-10/box%20turtle%20website%20647X490_1.png?itok=aKxz8h35" alt="pic"><br>
+        <p>animals are so fun</p>
+        <button>Click <a href="www.google.com">here to know more</a></button>
+        <hr>
+        <img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt="pic"><br>
+        <p>animals are so fun</p>
+        <button>Click <a href="www.google.com">here to know more</a></button>
+    </section>
+    <section>
+
+    </section>
+    <footer>
+        ©2021 All rights reserved | Designed by: <a href="www.google.com">Shaimaa</a>
+    </footer>
+    </section>
+    
+</body>
+</html>
