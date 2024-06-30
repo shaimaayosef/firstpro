@@ -1,19 +1,19 @@
-function calculateSum() {
+document.getElementById("clickResult").addEventListener('click',function calculateSum() {
     var number1 = Number(document.getElementById('number1-1').value);
     var number2 = Number(document.getElementById('number2-1').value);
     var sum = number1 + number2;
     document.getElementById('result').innerText = 'Sum: ' + sum;
-}
+})
 
-function calculateAverage() {
+document.getElementById("clickAverage").addEventListener('click',function calculateAverage() {
     var num1 = Number(document.getElementById('number1-2').value);
     var num2 = Number(document.getElementById('number2-2').value);
     var num3 = Number(document.getElementById('number3-2').value);
     var average = (num1 + num2 + num3) / 3;
     document.getElementById('averageResult').innerText = 'Average: ' + average;
-}
+})
 
-function calculateFlyingTime() {
+document.getElementById("clickFlyTime").addEventListener('click',function calculateFlyingTime() {
     var distance = Number(document.getElementById('distance').value);
     var speed = Number(document.getElementById('speed').value);
     if(speed <= 0) {
@@ -24,32 +24,32 @@ function calculateFlyingTime() {
     var hours = Math.floor(flyingTime);
     var minutes = Math.round((flyingTime - hours) * 60);
     document.getElementById('flyingTimeResult').innerText = 'Flying Time: ' + hours + ' hour(s) and ' + minutes + ' minute(s)';
-}
+})
 
-function calculateBMI() {
+document.getElementById("clickBmiResult").addEventListener('click',function calculateBMI() {
     var weight = Number(document.getElementById('weight').value);
     var height = Number(document.getElementById('height').value);
     var bmi = weight / (height * height);
     document.getElementById('bmiResult').innerText = 'BMI: ' + bmi.toFixed(2);
-}
+})
 
-function convertLength() {
+document.getElementById("clickLength").addEventListener('click',function convertLength() {
     var lengthCm = Number(document.getElementById('lengthCm').value);
     var lengthInMeters = lengthCm / 100;
     var lengthInKilometers = lengthCm / 100000;
     document.getElementById('lengthInMeters').innerText = 'Meters: ' + lengthInMeters;
     document.getElementById('lengthInKilometers').innerText = 'Kilometers: ' + lengthInKilometers.toFixed(2);
-}
+})
 
-function convertData() {
+document.getElementById("clickData").addEventListener('click',function convertData() {
     var dataBytes = Number(document.getElementById('dataBytes').value);
     var dataInBits = dataBytes * 8;
     var dataInGigabytes = dataBytes / (1024 * 1024 * 1024);
     document.getElementById('dataInBits').innerText = 'Bits: ' + dataInBits.toLocaleString() + ' bits';
     document.getElementById('dataInGigabytes').innerText = 'Gigabytes: ' + dataInGigabytes.toFixed(3) + ' GB';
-}
+})
 
-function calculateUploadTime() {
+document.getElementById("clickUpload").addEventListener('click',function calculateUploadTime() {
     var uploadSpeed = Number(document.getElementById('uploadSpeed').value);
     var fileSize = Number(document.getElementById('fileSize').value);
     var uploadSpeedMBps = uploadSpeed / 8;
@@ -57,17 +57,17 @@ function calculateUploadTime() {
     var minutes = Math.floor(uploadTimeInSeconds / 60);
     var seconds = Math.round(uploadTimeInSeconds % 60);
     document.getElementById('uploadTimeResult').innerText = 'Upload Time: ' + minutes + ' minute(s) and ' + seconds + ' second(s)';
-}
+})
 
-function calculateCircleProperties() {
+document.getElementById("clickCircle").addEventListener('click',function calculateCircleProperties() {
     var radius = Number(document.getElementById('radius').value);
     var area = Math.PI * radius * radius;
     var circumference = 2 * Math.PI * radius;
     document.getElementById('circleArea').innerText = 'Area: ' + area.toFixed(2) + ' square units';
     document.getElementById('circleCircumference').innerText = 'Circumference: ' + circumference.toFixed(2) + ' units';
-}
+})
 
-function swapValues() {
+document.getElementById("clickOriginal").addEventListener('click',function swapValues() {
     var number1 = Number(document.getElementById('number1-3').value);
     var number2 = Number(document.getElementById('number2-3').value);
     document.getElementById('originalValues').innerText = 'Original Values:' + number1 + ',' + number2;
@@ -77,9 +77,9 @@ function swapValues() {
     number2 = temp;
     
     document.getElementById('swappedValues').innerText = 'Swapped Values: ' + number1 + ', ' + number2;
-}
+})
 
-function printBiggerNumber() {
+document.getElementById("clickBigger").addEventListener('click',function printBiggerNumber() {
     var number1 = Number(document.getElementById('number1').value);
     var number2 = Number(document.getElementById('number2').value);
     var result;
@@ -92,9 +92,9 @@ function printBiggerNumber() {
         result = "Both numbers are equal.";
     }
     document.getElementById('biggerNumberResult').innerText = 'Bigger Number: ' + result;
-}
+})
 
-function checkNumber() {
+document.getElementById("clickNumber").addEventListener('click',function checkNumber() {
     var number = Number(document.getElementById('number1-4').value);
     var resultText = 'Number is: ';
     
@@ -107,9 +107,9 @@ function checkNumber() {
     }
     
     document.getElementById('numberResult').innerText = resultText;
-}
+})
 
-function checkDivisibility() {
+document.getElementById("clickDivisibility").addEventListener('click',function checkDivisibility() {
     var number = Number(document.getElementById('number1-5').value);
     var resultText = 'Result: ';
     
@@ -120,9 +120,9 @@ function checkDivisibility() {
     }
     
     document.getElementById('divisibilityResult').innerText = resultText;
-}
+})
 
-function checkEvenOdd() {
+document.getElementById("clickEvenOddResult").addEventListener('click',function checkEvenOdd() {
     var number = Number(document.getElementById('number1-6').value);
     var resultText = 'Number is: ';
     
@@ -133,9 +133,9 @@ function checkEvenOdd() {
     }
     
     document.getElementById('evenOddResult').innerText = resultText;
-}
+})
 
-function checkWithinRange() {
+document.getElementById("clickanRge").addEventListener('click',function checkWithinRange() {
     var rangeStart = Number(document.getElementById('rangeStart').value);
     var rangeEnd = Number(document.getElementById('rangeEnd').value);
     var numberToCheck = Number(document.getElementById('numberToCheck').value);
@@ -148,9 +148,9 @@ function checkWithinRange() {
     }
     
     document.getElementById('rangeResult').innerText = resultText;
-}
+})
 
-function calculateBMI() {
+document.getElementById("clickBmiResult1").addEventListener('click',function calculateBMI() {
     var height = Number(document.getElementById('height1').value);
     var weight = Number(document.getElementById('weight1').value);
     var bmi = weight / (height * height);
@@ -165,9 +165,9 @@ function calculateBMI() {
     }
     
     document.getElementById('bmiResult1').innerText = resultText;
-}
+})
 
-function calculateFinalAmount() {
+document.getElementById("clickFinalAmount").addEventListener('click',function calculateFinalAmount() {
     var purchaseAmount = Number(document.getElementById('purchaseAmount').value);
     var discountRate = 0.05;
     var taxRate = 0.10;
@@ -186,9 +186,9 @@ function calculateFinalAmount() {
     resultText += finalAmount.toFixed(2) + ' L.E.';
     
     document.getElementById('finalAmount').innerText = resultText;
-}
+})
 
-function calculateDogYears() {
+document.getElementById("clickDogYearsResult").addEventListener('click',function calculateDogYears() {
     var humanYears = Number(document.getElementById('humanYears').value);
     var dogYears;
     var resultText = "Dog's Age in Dog Years: ";
@@ -204,9 +204,9 @@ function calculateDogYears() {
     }
 
     document.getElementById('dogYearsResult').innerText = resultText;
-}
+})
 
-function performCalculation() {
+document.getElementById("calculationResult").addEventListener('click',function performCalculation() {
     var number1 = Number(document.getElementById('number1-7').value);
     var number2 = Number(document.getElementById('number2-7').value);
     var operation = document.getElementById('operation').value.trim();
@@ -239,4 +239,4 @@ function performCalculation() {
 
     resultText += result;
     document.getElementById('calculationResult').innerText = resultText;
-}
+})
