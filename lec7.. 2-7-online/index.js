@@ -1,137 +1,130 @@
+var numbers=[1,1,2,2,3,5,5,7,8,4]
+console.log(numbers[2]);                   //3
+console.log(numbers[4]);                   //5
+console.log(numbers.length);               //6
+console.log(numbers[numbers.length-1]);   //6
+console.log(numbers);   //0:1,  1:2,  2:3,  3:4,  4:5,  5:6 -every number in saperate line
+for(let i=0;i<numbers.length;i++){
+console.log(numbers[i])
+} //printt all elements
 
-// document.getElementById('btn_1').addEventListener('click', function () {
-//     var num = Number(document.getElementById('num1_q1').value);
-//     var res = document.getElementById('res_1');
-//     result_str = ""
-//     for (i = 1; i <= num; i++) {
-//         result_str += (" " + i)
-//     }
-//     res.innerHTML = result_str;
-// })
-
-
-var numbers = [1, 2, 3, 4, 5, 6]
-console.log(numbers)
-
-for (let i = 0; i < numbers.length; i++) {
-    console.log(numbers[i])
-}
-
-console.log("Even numbers only:")
-for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] % 2 == 0) {
+//print even numpers
+for(let i=0;i<numbers.length;i++){
+    if(numbers[i]%2==0){
         console.log(numbers[i])
     }
 }
-console.log("Array reversed:")
-for (let i = numbers.length - 1; i >= 0; i--) {
-    console.log(numbers[i])
-}
 
-console.log("Push():")
-var arr = []
-console.log(arr)
-arr.push(66)
-console.log(arr)
+//print even numbers with even positions
+for(let i=0;i<numbers.length;i++){
+    if(numbers[i] !== undefined && numbers[i]%2==0 && i%2==0){
+        console.log(numbers[i])
 
-console.log("Negative numbrs only:")
-neg_arr = [1, -1, 4, -6, 4, 6, -5, -32]
-for (let i = 0; i < neg_arr.length; i++) {
-    if (neg_arr[i] < 0) {
-        console.log(neg_arr[i])
     }
 }
 
+//write an algorithm that reverses the order of elements of the given array
+var numbers=[1,2,3,4,5,6]
+var reversedArray=[]
+for(let i=numbers.length-1;i>=0;i--){
+    reversedArray.push(numbers[i])
+}
+console.log(reversedArray)
 
-exists_arr = [1, 2, 3, 4, 1, 2, 6, 7, 3, 0, 5]
-// var x = prompt("Enter number:")
-var x = 4
-console.log("Check if number exists in array:")
-
-var found = false;
-
-for (let i = 0; i < exists_arr.length; i++) {
-    if (exists_arr[i] == x) {
-        found = true;
+//write an array ontains negative numbers
+var numbers=[1,-2,3,-4,5,-6]
+//print all negative numbers from the previos array
+for(let i=0;i<numbers.length;i++){
+    if(numbers[i]<0){
+        console.log(numbers[i])
     }
 }
 
-if (found) {
-    console.log(x + " exists in the array")
-} else {
-    console.log(x + " doesn't exist in the array")
-}
-
-//
-
-console.log("Check how many times number exists in array:")
-
-var sum = 0
-
-for (let i = 0; i < exists_arr.length; i++) {
-    if (exists_arr[i] == x) {
-        sum += 1;
+//write an algorithm to fined a spesefic number prompt from user'
+var numbers=[1,2,3,4,5,6]
+document.getElementById("find").addEventListener('click',function(){
+    var num=Number(document.getElementById("input1").value)
+var isFound=false
+for(let i=0;i<numbers.length;i++){
+    if(numbers[i]===num){
+        isFound=true
+        break
     }
 }
-
-console.log(x + " exists " + sum + " time(s) in the array")
-
-
-sum = 0;
-
-console.log("Sums elemnts of array:")
-for (let i = 0; i < numbers.length; i++) {
-    sum += numbers[i]
+if(isFound){
+    document.getElementById("result").innerHTML = "number exist";
 }
+else{
+    document.getElementById("result").innerHTML = 'Number is not found';
+}})
 
+//write an algorithem that determine a specefic number how many times is repeted
+var numbers=[1,2,3,4,5,5,6,4,4,4,4]
+document.getElementById("count").addEventListener('click',function(){
+    var num=Number(document.getElementById("input2").value)
+    var count=0
+    for(let i=0;i<numbers.length;i++){
+    if(numbers[i]===num){
+        count++
+    }
+}
+document.getElementById("countResult").innerHTML =count;
+}
+)
+
+//get the sum of the array numbers
+var numbers=[1,2,3,4,5,6]
+var sum=0
+for(let i=0;i<numbers.length;i++){
+    sum+=numbers[i]
+}
 console.log(sum)
 
-console.log("Max num in array:")
-max_arr = [1, 6, , 33, 5, 7, 77, 3, -8, -44, 0]
-
-var max = max_arr[0]
-for (let i = 0; i < max_arr.length; i++) {
-    if (max_arr[i] > max) {
-        max = max_arr[i];
+//get the max number in array
+var numbers=[1,2,3,4,5,6]
+var max=numbers[0]
+for(let i=1;i<numbers.length;i++){
+    if(numbers[i]>max){
+        max=numbers[i]
     }
 }
 console.log(max)
 
-console.log("Total of even and odd numbers:")
-var odd = 0
-var even = 0
-
-for (let i = 0; i < max_arr.length; i++) {
-    if (max_arr[i] % 2 == 0) {
-        even++;
-    } else {
-        odd++;
+//get the min number in array
+var numbers=[1,2,3,4,5,6]
+var min=numbers[0]
+for(let i=1;i<numbers.length;i++){
+    if(numbers[i]<min){
+        min=numbers[i]
     }
 }
-console.log("Even: " + even + "\nOdd: " + odd)
+console.log(min)
 
-console.log("Second biggest number")
-
-// max_arr = [0]
-// max_arr = [55, 66, 66]
-// max_arr = [5, 5, 5]
-max_arr = [-11, -66, -444]
-
-
-max = max_arr[0]
-s_max = max_arr[0]
-
-for (let i = 0; i < max_arr.length; i++) {
-    if (max == s_max && max_arr[i] < s_max) {
-        s_max = max_arr[i]
-    } else if (max_arr[i] > max) {
-        s_max = max;
-        max = max_arr[i];
+//determine how many numpers is even and howmany is odd
+var numbers=[1,2,3,4,5,6]
+var evenCount=0
+var oddCount=0
+for(let i=0;i<numbers.length;i++){
+    if(numbers[i]%2==0){
+        evenCount++
+    }else{
+        oddCount++
     }
 }
-if (max != s_max) {
-    console.log("Biggest number: " + max + "\nSecond Biggest number: " + s_max)
-} else {
-    console.log("No Second Biggest number")
+console.log('even numbers count is '+evenCount)
+console.log('odd numbers count is '+oddCount)
 
+//nested loops
+var numbers=[[1,2,3],[4,5,6],[7,8,9]]
+for(let i=0;i<numbers.length;i++){
+    for(let j=0;j<numbers[i].length;j++){
+        console.log(numbers[i][j])
+    }
 }
+
+//sort
+var numbers=[1,2,3,4,5,6]
+numbers.sort()
+console.log(numbers)
+
+
