@@ -127,4 +127,15 @@ var numbers=[1,2,3,4,5,6]
 numbers.sort()
 console.log(numbers)
 
+//dist game
+var random=parseInt(Math.random()*6)+1
+document.getElementById('btn').addEventListener('click',function(){
+    var guess=parseInt(document.getElementById('input3').value)
+    if(guess===random){
+        document.getElementById('guss').innerHTML='Congratulation you won'
+    }else{
+        document.getElementById('guss').innerHTML='You lost the number was '+random
+    }
+})
 
+//this need to edit to make it areal game first mak it only three tryes and make a ather btn to star anew game with a new 3 tryes
