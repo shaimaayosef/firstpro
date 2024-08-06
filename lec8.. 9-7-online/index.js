@@ -1,23 +1,3 @@
-//concatenate
-var myName ='shaimaa'
-var jop = 'developer'
-var str = `my name is ${myName} and i am a ${jop}`
-console.log(str)
-console.log(jop.length);
-console.log(jop.charAt(0));
-console.log(jop.indexOf('v'));
-console.log(jop.includes('e'));
-console.log(jop.includes('i'));
-console.log(jop.slice(0,3));
-
-var product={
-    name:'yellowFlower',
-    price: 10,
-    category:'flower'
-}
-console.log(product);
-console.log(product.name);
-console.log(product.price);
 //array of objects
 var products=[
     {
