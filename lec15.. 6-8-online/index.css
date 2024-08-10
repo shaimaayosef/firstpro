@@ -59,3 +59,13 @@
 .movie-card button:hover {
     background-color: #45a049;
 }
+
+.favorits-button{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    text:bold;
+    margin-left:50px;
+}

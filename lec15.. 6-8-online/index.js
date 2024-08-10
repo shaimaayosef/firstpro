@@ -22,23 +22,39 @@ const searchMovies = () => {
 
 document.getElementById('search').addEventListener('click', searchMovies);
 
-//add to favorits function
-// const addToFavorits = (movie) => {
-//     const favorits = JSON.parse(localStorage.getItem('favorits')) || [];
-//     favorits.push(movie);
-//     localStorage.setItem('favorits', JSON.stringify(favorits));
-// };
+//add favorits movies iñto my local server 
+const addToFavorits = (movie) => {
+    fetch('http://localhost:3000/favorits', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(movie)
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data);
+        }
+    )
+}
 
-// //display favorits
-// const displayFavorits = () => {
-//     const favorits = JSON.parse(localStorage.getItem('favorits')) || [];
-//     const resultContainer = document.getElementById('result');
-//     resultContainer.innerHTML = '';
-//     resultContainer.innerHTML = favorits.map(movie => {
-//         return `<div class="movie-card">
-//             <img src="${movie.Poster}" alt="${movie.Title}">
-//             <h2>${movie.Title}</h2>
-//             <p>${movie.Year}</p>
-//         </div>`;
-//     }).join('');
-// };
+//display all favorits when click on favorit putton
+const showFavorits = () => {
+    fetch('http://localhost:3000/favorits')
+        .then((response) => response.json())
+        .then((data) => {
+            const resultContainer = document.getElementById('result');
+            resultContainer.innerHTML = '';
+            if (data.length > 0) {
+                resultContainer.innerHTML = data.map(movie => {
+                    return `<div class="movie-card">
+                        <img src="${movie.Poster}" alt="${movie.Title}">
+                        <h2>${movie.Title}</h2>
+                        <p>${movie.Year}</p>
+                    </div>`;
+                }).join('');
+            } else {
+                resultContainer.innerHTML = '<p>No favorits found</p>';
+            }
+        })
+};

@@ -60,7 +60,7 @@ const render_products=()=>{
         <h2>${products[i].name}</h2>
         <p>${products[i].description}</p>
         <p>${products[i].price}</p>
-        <button>Add to Cart</button>
+        <button onclick="addToCart(${products[i].id})">Add to Cart</button>
     </div>
     `
 }
@@ -83,7 +83,7 @@ searchBtn.addEventListener('click', function(){
                 <h2>${products[i].name}</h2>
                 <p>${products[i].description}</p>
                 <p>${products[i].price}</p>
-                <button>Add to Cart</button>
+                <button onclick="addToCart(${products[i].id})>Add to Cart</button>
             </div>
             `
         }
@@ -122,7 +122,7 @@ const render_signup =()=>{
         <div class="box"><p>do you allready have an account?</p> <a href="#" onclick="login()" >Sign in</a></div>
     </form>`
 }
-var users=[];
+var users=[{email:"shimaa@gmail",password:"1234"}];
 //sighn up function
 const signup=()=>{
     var email = document.getElementById('email').value;
@@ -214,3 +214,18 @@ const addProduct=()=>{
     }
 }
 
+//add to cart function
+var cart = [];
+const addToCart=(id)=>{
+    if(loggedIn){
+        for(var i=0; i<products.length; i++){
+            if(products[i].id == id){
+                cart.push(products[i]);
+                alert('product added to cart');
+            }
+        }
+    }else{
+        alert('please log in');
+    }
+}
+console.log(cart);
