@@ -83,7 +83,7 @@ searchBtn.addEventListener('click', function(){
                 <h2>${products[i].name}</h2>
                 <p>${products[i].description}</p>
                 <p>${products[i].price}</p>
-                <button onclick="addToCart(${products[i].id})>Add to Cart</button>
+                <button onclick="addToCart(${cart[i].id})>Add to Cart</button>
             </div>
             `
         }
@@ -215,17 +215,40 @@ const addProduct=()=>{
 }
 
 //add to cart function
-// var cart = [];
-// const addToCart=(id)=>{
-//     if(loggedIn){
-//         for(var i=0; i<products.length; i++){
-//             if(products[i].id == id){
-//                 cart.push(products[i]);
-//                 alert('product added to cart');
-//             }
-//         }
-//     }else{
-//         alert('please log in');
-//     }
-// }
-// console.log(cart);
+var cart = [];
+const addToCart=(id)=>{
+    if(loggedIn){
+        for(var i=0; i<products.length; i++){
+            if(products[i].id == id){
+                cart.push(products[i]);
+                alert('product added to cart');
+                break;
+            }
+        }
+    }else{
+        alert('please log in');
+    }
+}
+console.log(cart);
+
+//render cart
+
+const renderCart=()=>{
+    if(loggedIn){
+        root.innerHTML = '';
+        for(var i=0; i<cart.length; i++){
+            root.innerHTML += `
+            <div class="product-card">
+                <img src="${cart[i].img}" alt=''>
+                <h2>${cart[i].name}</h2>
+                <p>${cart[i].description}</p>
+                <p>${cart[i].price}</p>
+                <button onclick="removeFromCart(${cart[i].id})">Remove</button>
+            </div>
+            `
+        }
+        root.innerHTML += `<div><h2>Total Price: ${totalPrice()}</h2></div>`
+    } else {
+        alert('Please log in to view the cart');
+    }
+}
