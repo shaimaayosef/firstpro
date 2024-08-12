@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+
 import './App.css';
+//import useState
+import React, { useState } from 'react';
 
 function App() {
+  var[blogs,setBlogs]=useState(['blog1','blog2','blog3'])
+  console.log(blogs);
+  const addBlog=()=>{
+    setBlogs(['blog1','blog2','blog3','blog4'])
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Blog List</h1>
+      <ul>
+        {blogs.map((blog)=>(
+          <h1>{blog}</h1>
+        ))}
+      </ul>
+      <button onClick={addBlog}>Add Blog 4</button>
     </div>
   );
 }
