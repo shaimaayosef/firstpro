@@ -1,0 +1,18 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "username": "John Doe",
+        "email": "john.doe@example.com",
+        "password": 32230
+      }
+    ],
+    "workouts": [
+      {
+        "id": 1,
+        "title": 1,
+        "description": "Running",
+        "sets": 30
+      }
+    ]
+  }
